@@ -1,4 +1,4 @@
-public class KantineSimulatie {
+public class KantineSimulatie_1 {
 
     private static Kantine kantine;
 
@@ -7,7 +7,7 @@ public class KantineSimulatie {
     /**
      * Constructor
      */
-    public KantineSimulatie() {
+    public KantineSimulatie_1() {
         kantine = new Kantine();
     }
 

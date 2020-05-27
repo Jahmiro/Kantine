@@ -78,6 +78,9 @@ public class Persoon{
         this.geslacht = geslacht;//zorgt ervoor dat je een geslacht kan invullen
     }
 
+    public void pakDienblad(Dienblad dienbladKlant) {
+    }
+
     public class Datum{
         public void getDatumAsString() {
         }

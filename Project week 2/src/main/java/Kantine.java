@@ -103,4 +103,7 @@ public class Kantine {
     public Kassa getKassa(){
         return kassa;
     }
+
+    public void setKantineAanbod(KantineAanbod kantineaanbod) {
+    }
 }
