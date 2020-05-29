@@ -70,21 +70,27 @@ public class Persoon{
             }}
     }
 
-    public void getPersoon(int bsn, String voornaam, String achternaam, String geboortedatum, String geslacht){
-        this.bsn = bsn;//zorgt ervoor dat je een BSN kan invullen
-        this.voornaam = voornaam;//zorgt ervoor dat je een voornaam kan invullen
-        this.achternaam = achternaam;//zorgt ervoor dat je een achternaam kan invullen
-        this.geboortedatum = geboortedatum;//zorgt ervoor dat je een geboortedatum kan invullen
-        this.geslacht = geslacht;//zorgt ervoor dat je een geslacht kan invullen
+    public void setBsn(int bsn) {
+        this.bsn = bsn;
+    }
+
+    public void setVoornaam(String voornaam) {
+        this.voornaam = voornaam;
+    }
+
+    public void setAchternaam(String achternaam) {
+        this.achternaam = achternaam;
+    }
+
+    public void setGeboortedatum(String geboortedatum) {
+        this.geboortedatum = geboortedatum;
+    }
+
+    public void setGeslacht(String geslacht) {
+        this.geslacht = geslacht;
     }
 
     public void pakDienblad(Dienblad dienbladKlant) {
-    }
-
-    public class Datum{
-        public void getDatumAsString() {
-        }
-
     }
 
     @Override

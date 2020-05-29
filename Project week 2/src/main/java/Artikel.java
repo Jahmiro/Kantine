@@ -67,8 +67,6 @@ public class Artikel {
 
     @Override
     public String toString() {
-        return "{" +
-
-                "}";
+        return  "Artikelnaam: " + getNaam() + "\nArtikelprijs " + getPrijs();
     }
 }
