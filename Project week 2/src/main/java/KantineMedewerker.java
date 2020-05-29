@@ -1,3 +1,10 @@
+/**
+ * Met deze klasse wordt er een medewerker aangemaakt
+ *
+ * @author Jahmiro Kooijstra, Arjen Dijk en Djordi Olijve
+ * @version 1.0
+ */
+
 public class KantineMedewerker extends Persoon
 {
     // instance variables - replace the example below with your own
@@ -5,9 +12,10 @@ public class KantineMedewerker extends Persoon
     private boolean magAchterKassa;
 
     /**
-     * Constructor:
+     *
      * Initialiseer de velden voor een persoon
      * @params bsn, voornaam, achternaam, geboorteDag, geboorteMaand, geboorteJaar, geslacht, medewerkersNummer, magAchterKassa
+     *
      */
     public KantineMedewerker(int bsn, String voornaam, String achternaam, String geboortedatum,  String geslacht
             ,int medewerkersNummer, boolean magAchterKassa)
@@ -18,9 +26,8 @@ public class KantineMedewerker extends Persoon
     }
 
     /**
-     * Methode - Geeft het medewerkersNummer terug
      *
-     * @return medewerkersNummer        Het nummer van een KantineMedewerker
+     * @return Geeft het nummer terug van de medewerker
      */
     public int getMedewerkersNummer()
     {
@@ -29,9 +36,9 @@ public class KantineMedewerker extends Persoon
     }
 
     /**
-     * Methode - Geeft true/false terug van magAchterKassa
      *
-     * @return magAchterKassa        De waarde van een magAchterKassa
+     * @return Geeft terug als een medewerker achter de kassa mag of niet
+     *
      */
     public boolean getMagAchterKassa()
     {
@@ -40,9 +47,10 @@ public class KantineMedewerker extends Persoon
     }
 
     /**
-     * Methode - Zet het medewerkersNummer
      *
+     * Initialiseer de velden voor een medewerkersnummer
      * @param medewerkersNummer
+     *
      */
     public void setMedewerkersNummer(int medewerkersNummer)
     {
@@ -51,9 +59,10 @@ public class KantineMedewerker extends Persoon
     }
 
     /**
-     * Methode - Zet de waarde voor magAchterKassa
      *
+     * Initialiseer de velden voor als een medewerker achter de kassa mag of niet
      * @param magAchterKassa
+     *
      */
     public void setMagAchterKassa(boolean magAchterKassa)
     {
@@ -62,8 +71,10 @@ public class KantineMedewerker extends Persoon
     }
 
     /**
+     *
      * Overschrijven van toString methode
-     * @return de gegevens van de student in een string
+     * @return de gegevens van de medewerker in een string
+     *
      */
     public String toString()
     {

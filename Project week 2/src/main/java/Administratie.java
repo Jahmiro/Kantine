@@ -1,3 +1,10 @@
+/**
+ * Met deze klasse wordt de administratie bijgehouden
+ *
+ * @author Jahmiro Kooijstra, Arjen Dijk en Djordi Olijve
+ * @version 1.0
+ */
+
 public class Administratie {
 
     /**

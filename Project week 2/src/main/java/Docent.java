@@ -1,3 +1,10 @@
+/**
+ * Met deze klasse wordt er een docent aangemaakt
+ *
+ * @author Jahmiro Kooijstra, Arjen Dijk en Djordi Olijve
+ * @version 1.0
+ */
+
 public class Docent extends Persoon
 {
     private String afkorting;
@@ -5,7 +12,7 @@ public class Docent extends Persoon
 
     /**
      * Constructor
-     * velden voor het definieren van een Docent
+     * Initialiseer de velden voor docent
      * @params bsn, voornaam, achternaam, geboortedatum, geslacht, afkorting, afdeling
      */
     public Docent(int bsn, String voornaam, String achternaam, String geboortedatum, String geslacht
@@ -18,7 +25,7 @@ public class Docent extends Persoon
 
     /**
      *
-     *velden voor het definieren van een afkorting
+     * Initialiseer velden voor de afkorting van een docent
      * @param afkorting
      *
      */
@@ -32,7 +39,7 @@ public class Docent extends Persoon
 
     /**
      *
-     * velden voor het definieren van een afdeling
+     * Initialiseer velden voor de afdeling van een docent
      * @param afdeling
      *
      */

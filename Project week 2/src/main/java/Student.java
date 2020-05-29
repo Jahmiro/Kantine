@@ -1,3 +1,10 @@
+/**
+ * Met deze klasse wordt er een student aangemaakt
+ *
+ * @author Jahmiro Kooijstra, Arjen Dijk en Djordi Olijve
+ * @version 1.0
+ */
+
 public class Student extends Persoon
 {
     private int studentNummer;
@@ -5,7 +12,7 @@ public class Student extends Persoon
 
     /**
      *
-     * velden voor het definieren van een student
+     * Initialiseer velden voor een student
      * @params bsn, voornaam, achternaam, geboorteDag, geboorteMaand, geboorteJaar, geslacht, studentNummer, studieRichting
      *
      */
@@ -39,7 +46,7 @@ public class Student extends Persoon
 
     /**
      *
-     *veld voor het definneren van studentnummer
+     * Initialiseer velden voor een studentnummer
      * @param studentNummer
      *
      */
@@ -50,7 +57,7 @@ public class Student extends Persoon
 
     /**
      *
-     * veld voor het definieren van studierichting
+     * Initialiseer veld voor een studierichting
      * @param studieRichting
      *
      */

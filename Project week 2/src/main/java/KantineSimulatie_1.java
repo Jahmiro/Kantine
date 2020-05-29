@@ -1,3 +1,9 @@
+/**
+ *
+ * @author Jahmiro Kooijstra, Arjen Dijk en Djordi Olijve
+ * @version 1.0
+ */
+
 public class KantineSimulatie_1 {
 
     private static Kantine kantine;

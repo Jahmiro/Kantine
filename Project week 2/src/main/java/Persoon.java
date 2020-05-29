@@ -1,3 +1,9 @@
+/**
+ * Met deze klasse wordt er een persoon aangemaakt
+ *
+ * @author Jahmiro Kooijstra, Arjen Dijk en Djordi Olijve
+ * @version 1.0
+ */
 
 public class Persoon{
     private int bsn;
@@ -26,6 +32,7 @@ public class Persoon{
     /**
      *
      * @return Geeft de Bsn van een persoon terug
+     *
      */
     public int getBsn() {
         return bsn;
@@ -34,6 +41,7 @@ public class Persoon{
     /**
      *
      * @return Geeft de voornaam van een persoon terug
+     *
      */
     public String getVoornaam() {
         return voornaam;
@@ -42,6 +50,7 @@ public class Persoon{
     /**
      *
      * @return geeft de Achternaam van een persoon terug
+     *
      */
     public String getAchternaam() {
         return achternaam;
@@ -50,6 +59,7 @@ public class Persoon{
     /**
      *
      * @return geeft de geboortedatum van een persoon terug
+     *
      */
     public String getGeboortedatum() {
         return geboortedatum;
@@ -58,6 +68,7 @@ public class Persoon{
     /**
      *
      * @return geeft het geslacht van een persoon terug
+     *
      */
     public String getGeslacht() {
         {//voert een controle uit op de invoer van geslacht
@@ -70,22 +81,52 @@ public class Persoon{
             }}
     }
 
+    /**
+     *
+     * Initialiseer velden voor een bsn
+     * @param bsn
+     *
+     */
     public void setBsn(int bsn) {
         this.bsn = bsn;
     }
 
+    /**
+     *
+     * Initialiseer velden voor een voornaam
+     * @param voornaam
+     *
+     */
     public void setVoornaam(String voornaam) {
         this.voornaam = voornaam;
     }
 
+    /**
+     *
+     * Initialiseer velden voor een achternaam
+     * @param achternaam
+     *
+     */
     public void setAchternaam(String achternaam) {
         this.achternaam = achternaam;
     }
 
+    /**
+     *
+     * Initialiseer velden voor een geboortedatum
+     * @param geboortedatum
+     *
+     */
     public void setGeboortedatum(String geboortedatum) {
         this.geboortedatum = geboortedatum;
     }
 
+    /**
+     *
+     * Initialiseer velden voor een geslacht
+     * @param geslacht
+     *
+     */
     public void setGeslacht(String geslacht) {
         this.geslacht = geslacht;
     }
@@ -93,6 +134,11 @@ public class Persoon{
     public void pakDienblad(Dienblad dienbladKlant) {
     }
 
+    /**
+     *
+     * @return de gegevens van de persoon in een string
+     *
+     */
     @Override
     public String toString() {
         return  "Naam: "+ getVoornaam() + " " + getAchternaam() + "\nBSN: "+ getBsn()+ "\nGeboortedatum: "+ getGeboortedatum()+"\nGeslacht: "+ getGeslacht();

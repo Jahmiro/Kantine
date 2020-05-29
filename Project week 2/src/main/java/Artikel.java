@@ -1,13 +1,13 @@
 /**
  * Met deze klasse kunnen artikelen worden aangemaakt.
  *
- * @author Jahmiro Kooijstra, Arjen en Djordi
+ * @author Jahmiro Kooijstra, Arjen Dijk en Djordi Olijve
  * @version 1.0
  */
 
 public class Artikel {
     /**
-     * Velden voor het defineren van een artikel
+     *  Initialiseer Velden voor artikelen
      */
     private String naam;
     private double prijs;
@@ -42,8 +42,8 @@ public class Artikel {
     }
 
     /**
-     *
-     * @param nieuweNaam zorgt ervoor dat je een naam aan een artikel kan geven
+     * Initialiseer de velden voor een artikelnaam
+     * @param nieuweNaam
      */
     public void setNaam(String nieuweNaam) {
         this.naam = nieuweNaam;
@@ -58,13 +58,18 @@ public class Artikel {
     }
 
     /**
-     *
-     * @param nieuwePrijs zorgt ervoor dat er een prijs een artikel gegeven kan worden
+     * Initialiseer velden voor een artikelprijs
+     * @param nieuwePrijs
      */
     public void setPrijs(double nieuwePrijs) {
         this.prijs = nieuwePrijs;
     }
 
+    /**
+     *
+     * @return de gegevens van de artikel in een string
+     *
+     */
     @Override
     public String toString() {
         return  "Artikelnaam: " + getNaam() + "\nArtikelprijs " + getPrijs();

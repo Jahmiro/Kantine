@@ -1,4 +1,9 @@
 import java.util.*;
+/**
+ *
+ * @author Jahmiro Kooijstra, Arjen Dijk en Djordi Olijve
+ * @version 1.0
+ */
 
 public class Dienblad {
     public Stack<Artikel> artikelen;
