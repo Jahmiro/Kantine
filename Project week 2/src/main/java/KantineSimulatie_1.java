@@ -38,7 +38,7 @@ public class KantineSimulatie_1 {
             }
 
             // verwerk rij voor de kassa
-            kantine.verwerkRijVoorKassa();
+            kantine.verwerkRij();
 
             // toon dagtotalen (artikelen en geld in kassa)
             System.out.println();

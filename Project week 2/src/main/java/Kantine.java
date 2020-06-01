@@ -8,7 +8,8 @@ public class Kantine {
 
     private Kassa kassa;
     private KassaRij kassarij;
-  private Persoon persoon1;
+    private Persoon persoon1;
+    private KantineAanbod KantineAanbod;
       
     /**
      * Constructor
@@ -48,7 +49,7 @@ public class Kantine {
      * Deze methode handelt de rij voor de kassa af.
      */
     public void verwerkRij(){
-        while(kassarij.isErEenRij()){
+        while(kassarij.erIsEenRij()){
             persoon1 = kassarij.eerstePersoonInRij();
             kassa.rekenAf(persoon1);
             kassarij.verwijderPersoonUitRij();
@@ -69,5 +70,9 @@ public class Kantine {
     }
 
     public void setKantineAanbod(KantineAanbod kantineaanbod) {
+    }
+
+    public KantineAanbod getKantineAanbod() {
+        return KantineAanbod;
     }
 }
