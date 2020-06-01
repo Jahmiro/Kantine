@@ -8,12 +8,8 @@ public class Kantine {
 
     private Kassa kassa;
     private KassaRij kassarij;
-  private Persoon persoon;
   private Persoon persoon1;
       
-  private Artikel artikel1;
-  private Artikel artikel2;
-
     /**
      * Constructor
      */
@@ -36,8 +32,8 @@ public class Kantine {
         Artikel artikel2 = new Artikel("Tosti",1.50);
 
         persoon.pakDienblad(dienblad1);
-        artikel1 = new Artikel("Bier", 5);
-        artikel2 = new Artikel("Pizza", 10);
+        artikel1 = new Artikel("Tosti", 2);
+        artikel2 = new Artikel("Patat", 1);
         
         persoon.pakArtikel(artikel1);
         persoon.pakArtikel(artikel2);
