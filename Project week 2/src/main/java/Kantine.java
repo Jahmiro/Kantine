@@ -10,13 +10,17 @@ public class Kantine {
     private KassaRij kassarij;
     private Persoon persoon1;
     private KantineAanbod KantineAanbod;
-      
+
+
+
     /**
      * Constructor
      */
     public Kantine() {
         kassarij = new KassaRij();
         kassa = new Kassa(kassarij);
+        KantineAanbod = KantineAanbod;
+
     }
 
     /**
@@ -69,10 +73,11 @@ public class Kantine {
         return kassa;
     }
 
-    public void setKantineAanbod(KantineAanbod kantineaanbod) {
-    }
-
     public KantineAanbod getKantineAanbod() {
         return KantineAanbod;
+    }
+
+    public void setKantineAanbod(KantineAanbod kantineAanbod) {
+        KantineAanbod = kantineAanbod;
     }
 }
