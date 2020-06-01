@@ -18,10 +18,10 @@ public class KassaRij {
     /**
      * Persoon sluit achter in de rij aan
      *
-     * @param klant
+     * @param persoon2
      */
-    public void sluitAchteraan(Dienblad klant) {
-        persoon.add(klant);
+    public void sluitAchteraan(Persoon persoon2) {
+        persoon.add(persoon2);
     }
 
     /**

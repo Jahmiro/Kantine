@@ -8,7 +8,11 @@ public class Kantine {
 
     private Kassa kassa;
     private KassaRij kassarij;
-    private KantineAanbod kantineAanbod;
+  private Persoon persoon;
+  private Persoon persoon1;
+      
+  private Artikel artikel1;
+  private Artikel artikel2;
 
     /**
      * Constructor
@@ -23,79 +27,36 @@ public class Kantine {
      * Artikelen aan en plaats deze op het dienblad. Tenslotte sluit de Persoon zich aan bij de rij
      * voor de kassa.
      */
-    public void loopPakSluitAan(Persoon persoon, String[] artikelnamen) {
-
-        for(int i=0; i < artikelnamen.length; i++){
-            persoon.getDienblad().voegToe(aanbod.getArtikel(artikelnamen[i]));
-        }
-    }
+  
     public void loopPakSluitAan() {
 
-        Persoon persoon1 = new Persoon(1234,"Arjen","Dijk",14,9,2000,'m');
-        Dienblad dienblad1 = new Dienblad();
+        Persoon persoon = new Persoon(1234,"Arjen","Dijk",14,9,2000,'m');
+         Dienblad dienblad1 = new Dienblad();
         Artikel artikel1 = new Artikel("Patat",2.00);
         Artikel artikel2 = new Artikel("Tosti",1.50);
 
-        persoon1.pakDienblad(dienblad1);
-        persoon1.getDienblad().voegToe(artikel1);
-        persoon1.getDienblad().voegToe(artikel2);
+        persoon.pakDienblad(dienblad1);
+        artikel1 = new Artikel("Bier", 5);
+        artikel2 = new Artikel("Pizza", 10);
+        
+        persoon.pakArtikel(artikel1);
+        persoon.pakArtikel(artikel2);
+                
+        kassarij.sluitAchteraan(persoon);
+    
+    } 
+    
 
-        kassarij.sluitAchteraan(persoon1);
-
-    }
-    /**
-     * in deze methode wordt een dienblad met artikelen
-     * in de kassarij geplaatst
-     * @param dienblad
-     *
-     */
-    public void loopPakSluitAan(Dienblad dienblad, String[] artikelnamen) {
-        for(String naam : artikelnamen){
-            dienblad.voegToe(kantineaanbod.getArtikel(naam));
-        }
-        kassarij.sluitAchteraan(dienblad);
-    }
-
-    /**
-     * in deze methode wordt een dienblad met artikelen
-     * in de kassarij geplaatst
-     * @param dienblad
-     *
-     */
-    public void loopPakSluitAan(Dienblad dienblad, String[] artikelnamen) {
-        for(String naam : artikelnamen){
-            dienblad.voegToe(kantineaanbod.getArtikel(naam));
-        }
-        kassarij.sluitAchteraan(dienblad);
-    }
+  
     /**
      * Deze methode handelt de rij voor de kassa af.
      */
-    public void verwerkRijVoorKassa() {
-        while(kassarij.erIsEenRij()) {
-            Persoon staatBijKassa = kassarij.eerstePersoonInRij();
-            kassa.rekenAf(staatBijKassa);
+    public void verwerkRij(){
+        while(kassarij.isErEenRij()){
+            persoon1 = kassarij.eerstePersoonInRij();
+            kassa.rekenAf(persoon1);
+            kassarij.verwijderPersoonUitRij();
         }
-    }
-
-
-
-    /**
-     * Deze methode telt het geld uit de kassa
-     *
-     * @return hoeveelheid geld in kassa
-     */
-    public double hoeveelheidGeldInKassa() {
-        // method body omitted
-    }
-
-    /**
-     * Deze methode geeft het aantal gepasseerde artikelen.
-     *
-     * @return het aantal gepasseerde artikelen
-     */
-    public int aantalArtikelen() {
-        // method body omitted
     }
 
 
@@ -104,7 +65,8 @@ public class Kantine {
      * de kassa.
      */
     public void resetKassa() {
-        // method body omitted
+        aantalArtikelen = 0;
+        hoeveelheidGeld = 0;
     }
     public Kassa getKassa(){
         return kassa;
