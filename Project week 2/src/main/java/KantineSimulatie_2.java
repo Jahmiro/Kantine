@@ -31,6 +31,9 @@ public class KantineSimulatie_2 {
     private static final int MAX_ARTIKELEN_PER_SOORT = 20000;
 
     // minimum en maximum aantal personen per dag
+    private static final int STUDENTEN_PER_DAG_KANS=89;
+    private static final int DOCENTEN_PER_DAG_KANS=10;
+    private static final int KANTINEMEDEWERKERS_PER_DAG_KANS=1;
     private static final int MIN_PERSONEN_PER_DAG = 50;
     private static final int MAX_PERSONEN_PER_DAG = 100;
 
@@ -109,15 +112,39 @@ public class KantineSimulatie_2 {
             // for lus voor dagen
             for(int i=0;i<dagen;i++) {
                 // bedenk hoeveel personen vandaag binnen lopen
-                int aantalpersonen=getRandomValue(MIN_PERSONEN_PER_DAG, MAX_PERSONEN_PER_DAG);
-
+                int aantalpersonen = PERSONEN_PER_DAG;
+            
                 // laat de personen maar komen...
                 for(int j=0;j<aantalpersonen;j++) {
-                    // maak persoon en dienblad aan, koppel ze
-                    Persoon klantKantine = new Persoon();
-                    Dienblad dienbladKlant = new Dienblad();
-                    klantKantine.pakDienblad(dienbladKlant);
+                    int randomNum = random.nextInt(100);
 
+
+                    // maak persoon en dienblad aan, koppel ze
+                   // Persoon klantKantine = new Persoon();
+                    // Dienblad dienbladKlant = new Dienblad();
+                    // klantKantine.pakDienblad(dienbladKlant);
+
+
+                    if (randomNum < STUDENTEN_PER_DAG_KANS) {
+                        //Voeg studenten toe
+                        persoon1 = new Student(1234,"Lammerd","Geertema",28,2,1984,'m',4321,"ICT");
+                        dienblad1 = new Dienblad();
+                        persoon1.pakDienblad(dienblad1);
+                        System.out.println(persoon1.toString());
+                    }
+                    else if (randomNum >= STUDENTEN_PER_DAG_KANS && randomNum < STUDENTEN_PER_DAG_KANS+DOCENTEN_PER_DAG_KANS ) {
+                        //Voeg docenten toe
+                        persoon1 = new Docent(1234,"Geert","Lammerda",28,2,1984,'m',"GEER","Concierge");
+                        dienblad1 = new Dienblad();
+                        persoon1.pakDienblad(dienblad1);
+                        System.out.println(persoon1.toString());
+                    } else {
+                        //Voeg kantinemedewerkers toe
+                        persoon1 = new KantineMedewerker(1234,"Dave","Schoffel",28,2,1984,'m',9876,false);
+                        dienblad1 = new Dienblad();
+                        persoon1.pakDienblad(dienblad1);   
+                        System.out.println(persoon1.toString());
+                    }
                     // bedenk hoeveel artikelen worden gepakt
                     int aantalartikelen=getRandomValue(MIN_ARTIKELEN_PER_PERSOON, MAX_ARTIKELEN_PER_PERSOON);
 
