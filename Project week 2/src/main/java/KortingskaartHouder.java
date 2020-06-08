@@ -1,6 +1,6 @@
 /**
  *
- * @author Jahmiro Kooijstra, Arjen Dijk en Djordi Olijve
+ * @author Jahmiro Kooijstra, Arjen Dijk en Djordy Olijve
  * @version 1.0
  */
 

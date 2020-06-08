@@ -5,7 +5,7 @@
  * @version 1.0
  */
 
-public class KantineMedewerker extends Persoon
+public class KantineMedewerker extends Persoon implements KortingskaartHouder
 {
     // instance variables - replace the example below with your own
     private int medewerkersNummer;
@@ -79,5 +79,20 @@ public class KantineMedewerker extends Persoon
     public String toString()
     {
         return  "MedewerkersNR: " + getMedewerkersNummer() + "\nMag achter de kassa: " + getMagAchterKassa();
+    }
+
+    public double geefKortingsPercentage()
+    {
+        return 0.35;
+    }
+
+    public boolean heeftMaximum()
+    {
+        return false;
+    }
+
+    public double geefMaximum()
+    {
+        return 0.0;
     }
 }

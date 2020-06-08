@@ -5,7 +5,7 @@
  * @version 1.0
  */
 
-public class Docent extends Persoon
+public class Docent extends Persoon implements KortingskaartHouder
 {
     private String afkorting;
     private String afdeling;
@@ -73,5 +73,20 @@ public class Docent extends Persoon
     public String toString()
     {
         return  "Afkorting: " + getAfkorting() + "\nAfdeling: " + getAfdeling();
+    }
+
+    public double geefKortingsPercentage()
+    {
+        return 0.25;
+    }
+
+    public boolean heeftMaximum()
+    {
+        return true;
+    }
+
+    public double geefMaximum()
+    {
+        return 1.0;
     }
 }
