@@ -6,13 +6,13 @@
 
 public class Pinpas extends Betaalwijze {
     private double kredietlimiet;
-    
+
     /**
      * Methode om kredietlimiet te zetten
      * @param kredietlimiet
      */
     public void setKredietLimiet(double kredietlimiet) {
-        //omitted
+        this.kredietlimiet = kredietlimiet;
     }
 
     /**
