@@ -48,7 +48,7 @@ public class Kassa {
         }
         if (persoon.getBetaalwijze().betaal(betaling-kortingsBedrag)) {
             verkochteArtikelen += getAantalArtikelen(persoon);
-            inKas += betaling;
+            inKassa += betaling;
         } else {
             System.out.println("Niet genoeg saldo!");
         }
