@@ -28,31 +28,34 @@ public class Kassa {
      *
      * @param persoon die moet afrekenen
      */
-    public void rekenAf(Persoon persoon)
-    {
+    public void rekenAf(Persoon persoon) {
         double betaling = getTotaalPrijs(persoon);
         double kortingsPercentage = 0.00;
         double kortingsBedrag = 0.00;
         boolean heeftMaximum = false;
-        
-        if (persoon instanceof KortingskaartHouder) {
-            KortingskaartHouder kaartHouder = (KortingskaartHouder) persoon;
-            kortingsPercentage = kaartHouder.geefKortingsPercentage();
-            heeftMaximum = kaartHouder.heeftMaximum();
-            if (kortingsPercentage > 0){
-                kortingsBedrag = betaling * kortingsPercentage;
+        try {
+            if (persoon instanceof KortingskaartHouder) {
+                KortingskaartHouder kaartHouder = (KortingskaartHouder) persoon;
+                kortingsPercentage = kaartHouder.geefKortingsPercentage();
+                heeftMaximum = kaartHouder.heeftMaximum();
+                if (kortingsPercentage > 0) {
+                    kortingsBedrag = betaling * kortingsPercentage;
+                }
+                if (heeftMaximum) {
+                    kortingsBedrag = Math.min(kortingsBedrag, kaartHouder.geefMaximum());
+                }
             }
-            if (heeftMaximum){
-                kortingsBedrag = Math.min(kortingsBedrag, kaartHouder.geefMaximum());
+            if (persoon.getBetaalwijze().betaal(betaling - kortingsBedrag)) {
+                verkochteArtikelen += getAantalArtikelen(persoon);
+                inKassa += betaling;
+            } else {
+                System.out.println("Niet genoeg saldo!");
             }
-        }
-        if (persoon.getBetaalwijze().betaal(betaling-kortingsBedrag)) {
-            verkochteArtikelen += getAantalArtikelen(persoon);
-            inKassa += betaling;
-        } else {
-            System.out.println("Niet genoeg saldo!");
+        }  catch(TeWeinigGeldException e){
+            System.out.println(persoon.getVoornaam() + " " + persoon.getAchternaam() + ".");
         }
     }
+
     
 
     /**
