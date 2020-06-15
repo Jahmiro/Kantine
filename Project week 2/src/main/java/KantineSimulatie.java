@@ -34,9 +34,9 @@ public class KantineSimulatie {
     // minimum en maximum aantal personen per dag
     private static final int STUDENTEN_PER_DAG_KANS=89;
     private static final int DOCENTEN_PER_DAG_KANS=10;
-    private static final int KANTINEMEDEWERKERS_PER_DAG_KANS=1;
-    private static final int MIN_PERSONEN_PER_DAG = 50;
-    private static final int MAX_PERSONEN_PER_DAG = 100;
+    // private static final int KANTINEMEDEWERKERS_PER_DAG_KANS=1;
+    // private static final int MIN_PERSONEN_PER_DAG = 50;
+    // private static final int MAX_PERSONEN_PER_DAG = 100;
 
     // minimum en maximum artikelen per persoon
     private static final int MIN_ARTIKELEN_PER_PERSOON = 1;
@@ -214,4 +214,4 @@ public class KantineSimulatie {
 
         }
     }
-}
+
