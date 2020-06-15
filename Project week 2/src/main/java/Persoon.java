@@ -150,6 +150,13 @@ public class Persoon{
     public void pakDienblad(Dienblad dienbladKlant) {
     }
 
+     /**
+    * Methode om een artikel op een dienblad te zetten. 
+    * @param artikel
+    */
+    public Dienblad getDienblad(){
+        return dienblad;
+    }
     /**
      *
      * @return de gegevens van de persoon in een string
