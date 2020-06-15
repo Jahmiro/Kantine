@@ -11,7 +11,8 @@ public class Persoon{
     private String achternaam;
     private String geboortedatum;
     private String geslacht;
-    private Betaalwijze betaalwijze;        // hoe wil de persoon betalen
+    private Betaalwijze betaalwijze; 
+    private Dienblad dienblad;       
     /**
      * Lege constructor
      */
