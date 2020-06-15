@@ -28,10 +28,32 @@ public class Kassa {
      *
      * @param persoon1 die moet afrekenen
      */
-    public void rekenAf(Persoon persoon1) {
-        inKassa = hoeveelheidGeldInKassa() + persoon1.getTotaalPrijs();
-        verkochteArtikelen = verkochteArtikelen + persoon1.getAantalArtikelen();
+    public void rekenAf(Persoon persoon)
+    {
+        double betaling = getTotaalPrijs(persoon);
+        double kortingsPercentage = 0.00;
+        double kortingsBedrag = 0.00;
+        boolean heeftMaximum = false;
+        
+        if (persoon instanceof KortingskaartHouder) {
+            KortingskaartHouder kaartHouder = (KortingskaartHouder) persoon;
+            kortingsPercentage = kaartHouder.geefKortingsPercentage();
+            heeftMaximum = kaartHouder.heeftMaximum();
+            if (kortingsPercentage > 0){
+                kortingsBedrag = betaling * kortingsPercentage;
+            }
+            if (heeftMaximum){
+                kortingsBedrag = Math.min(kortingsBedrag, kaartHouder.geefMaximum());
+            }
+        }
+        if (persoon.getBetaalwijze().betaal(betaling-kortingsBedrag)) {
+            verkochteArtikelen += getAantalArtikelen(persoon);
+            inKas += betaling;
+        } else {
+            System.out.println("Niet genoeg saldo!");
+        }
     }
+    
 
     /**
      * Geeft het aantal artikelen dat de kassa heeft gepasseerd, vanaf het moment dat de methode

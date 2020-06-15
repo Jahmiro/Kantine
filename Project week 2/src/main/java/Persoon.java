@@ -11,7 +11,7 @@ public class Persoon{
     private String achternaam;
     private String geboortedatum;
     private String geslacht;
-
+    private Betaalwijze betaalwijze;        // hoe wil de persoon betalen
     /**
      * Lege constructor
      */
@@ -27,6 +27,7 @@ public class Persoon{
         this.achternaam = achternaam;           // Achternaam van een persoon
         this.geboortedatum = geboortedatum;     //Geboortedatum van een persoon
         this.geslacht = geslacht;               //Geslacht van een persoon
+    
     }
 
     /**
@@ -80,7 +81,22 @@ public class Persoon{
                 return "Onbekende invoer";
             }}
     }
+ /**
+     * Methode:
+     * Return de betaalwijze van een persoon
+     * @return Betaalwijze betaalwijze;
+     */
+    public Betaalwijze getBetaalwijze(){
+        return betaalwijze;
 
+         /**
+     * Methode:
+     * set de betaalwijze van een persoon
+     * @param betaalwijze
+     */
+    public void setBetaalwijze(Betaalwijze betaalwijze){
+        this.betaalwijze = betaalwijze;
+    }    
     /**
      *
      * Initialiseer velden voor een bsn
