@@ -11,7 +11,8 @@ public class Persoon{
     private String achternaam;
     private String geboortedatum;
     private String geslacht;
-    private Betaalwijze betaalwijze;        // hoe wil de persoon betalen
+    private Betaalwijze betaalwijze; 
+    private Dienblad dienblad;       
     /**
      * Lege constructor
      */
@@ -38,7 +39,16 @@ public class Persoon{
     public int getBsn() {
         return bsn;
     }
-
+ /**
+    * Methode om dienblad te koppelen aan een persoon
+    * Als het persoon geen dienblad heeft maakt dan een nieuwe aan.
+    * @param dienblad
+    */
+    public void pakDienblad(Dienblad dienblad)
+    {
+        this.dienblad = dienblad;
+    }
+    
     /**
      *
      * @return Geeft de voornaam van een persoon terug
