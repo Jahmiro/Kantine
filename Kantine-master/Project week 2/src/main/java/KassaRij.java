@@ -6,48 +6,57 @@ import java.util.*;
  */
 
 public class KassaRij {
-    private LinkedList<Dienblad> persoon;
+
+    private LinkedList<Persoon> rij;
 
     /**
      * Constructor
      */
     public KassaRij() {
-        persoon = new LinkedList<Dienblad>();
+        // Nieuwe rij maken
+        rij = new LinkedList<Persoon>();
     }
 
     /**
      * Persoon sluit achter in de rij aan
-     *
-     * @param persoon2
+     * @param persoon
      */
-    public void sluitAchteraan(Persoon persoon2) {
-        persoon.add(persoon2);
+    public void sluitAchteraan(Persoon persoon) {
+        //Zet persoon achter in de ArrayList
+        rij.add(persoon);
     }
 
     /**
-     * Indien er een rij bestaat, de eerste klant uit de rij verwijderen en retourneren. Als er
-     * niemand in de rij staat geeft deze null terug.
-     *
-     * @return Eerste klant in de rij of null
+     * Indien er een rij bestaat, de eerste Persoon uit
+     * de rij verwijderen en retourneren.
+     * Als er niemand in de rij staat geeft deze null terug.
+     * @return Eerste persoon in de rij of null
      */
-    public Dienblad eerstePersoonInRij() {
-        if (erIsEenRij()) {
-            Dienblad temp = persoon.get(0);
-            persoon.remove(0);
-            return temp;
+    public Persoon eerstePersoonInRij() {
+        if(rij.size() == 0)
+        {
+            return null;
         }
-        return null;
+        else
+        {
+            // Eerste in de rij in een extra variabele zetten
+            Persoon eerste = rij.get(0);
+            // Verwijderen uit de rij
+            rij.remove(0);
+            // Variabele die eerste stond verwijderen;
+            return eerste;
+        }
+
     }
 
     /**
      * Methode kijkt of er personen in de rij staan.
-     *
-     * @return Of er wel of geen rij bestaat
+     * Of er wel of geen rij bestaat
+     * @return boolean
      */
     public boolean erIsEenRij() {
-        if(persoon.size()>0){
-            return true;
-        }
-        return false;
+        //method body omitted
+        return(rij.size() > 0);
     }
+
 }

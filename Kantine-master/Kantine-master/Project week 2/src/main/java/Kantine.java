@@ -8,6 +8,7 @@ public class Kantine {
 
     private Kassa kassa;
     private KassaRij kassarij;
+    private Persoon persoon1;
     private KantineAanbod KantineAanbod;
 
 
@@ -30,16 +31,20 @@ public class Kantine {
   
     public void loopPakSluitAan() {
 
-        Persoon persoon1 = new Persoon(1234,"Geert","Lammerd","28-2-1984","m");
-        Dienblad dienblad1 = new Dienblad();
-        Artikel artikel1 = new Artikel("Gehaktbal",2.95);
-        Artikel artikel2 = new Artikel("Tosti",1.90);
+        Persoon persoon = new Persoon(1234,"Arjen","Dijk",14,9,2000,'m');
+         Dienblad dienblad1 = new Dienblad();
+        Artikel artikel1 = new Artikel("Patat",2.00);
+        Artikel artikel2 = new Artikel("Tosti",1.50);
 
-        persoon1.pakDienblad(dienblad1);
-        persoon1.getDienblad().voegToe(artikel1);
-        persoon1.getDienblad().voegToe(artikel2);
-
-        kassarij.sluitAchteraan(persoon1);
+        persoon.pakDienblad(dienblad1);
+        artikel1 = new Artikel("Tosti", 2);
+        artikel2 = new Artikel("Patat", 1);
+        
+        persoon.pakArtikel(artikel1);
+        persoon.pakArtikel(artikel2);
+                
+        kassarij.sluitAchteraan(persoon);
+    
     } 
     
 
@@ -47,15 +52,23 @@ public class Kantine {
     /**
      * Deze methode handelt de rij voor de kassa af.
      */
-    public void verwerkRijVoorKassa() {
-        while(kassarij.erIsEenRij()) {
-            Persoon staatBijKassa = kassarij.eerstePersoonInRij();
-            kassa.rekenAf(staatBijKassa);
+    public void verwerkRij(){
+        while(kassarij.erIsEenRij()){
+            persoon1 = kassarij.eerstePersoonInRij();
+            kassa.rekenAf(persoon1);
+            kassarij.verwijderPersoonUitRij();
         }
     }
 
 
-
+    /**
+     * Deze methode reset de bijgehouden telling van het aantal artikelen en "leegt" de inhoud van
+     * de kassa.
+     */
+    public void resetKassa() {
+        aantalArtikelen = 0;
+        hoeveelheidGeld = 0;
+    }
     public Kassa getKassa(){
         return kassa;
     }
