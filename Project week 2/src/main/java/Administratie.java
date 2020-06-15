@@ -15,7 +15,7 @@ public class Administratie {
      * @param aantal
      * @return het gemiddelde
      */
-    public double berekenGemiddeldAantal(int[] aantal) {
+    public static double berekenGemiddeldAantal(int[] aantal) {
         double totaleAantal = 0.00;
         for (int i = 0; i < aantal.length; i++) {
             totaleAantal += (double)aantal[i];
@@ -32,7 +32,7 @@ public class Administratie {
      * @param omzet
      * @return het gemiddelde
      */
-    public double berekenGemiddeldeOmzet(double[] omzet) {
+    public static double berekenGemiddeldeOmzet(double[] omzet) {
         double totaleOmzet = 0.00;
         for (int i = 0; i < omzet.length; i++) {
             totaleOmzet += omzet[i];

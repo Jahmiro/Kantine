@@ -26,7 +26,7 @@ public class Kassa {
      * die voor de kassa worden bijgehouden. De implementatie wordt later vervangen door een echte
      * betaling door de persoon.
      *
-     * @param persoon1 die moet afrekenen
+     * @param persoon die moet afrekenen
      */
     public void rekenAf(Persoon persoon)
     {
@@ -105,4 +105,4 @@ public class Kassa {
         return totaalPrijs;
     }
 }
-}
+

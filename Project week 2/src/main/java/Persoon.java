@@ -13,11 +13,6 @@ public class Persoon{
     private String geslacht;
     private Betaalwijze betaalwijze; 
     private Dienblad dienblad;       
-    /**
-     * Lege constructor
-     */
-    public Persoon() {
-    }
 
     /**
      * Constructor met parameter
@@ -30,6 +25,7 @@ public class Persoon{
         this.geslacht = geslacht;               //Geslacht van een persoon
     
     }
+
 
     /**
      *
@@ -92,9 +88,9 @@ public class Persoon{
      * Return de betaalwijze van een persoon
      * @return Betaalwijze betaalwijze;
      */
-    public Betaalwijze getBetaalwijze(){
+    public Betaalwijze getBetaalwijze() {
         return betaalwijze;
-
+    }
          /**
      * Methode:
      * set de betaalwijze van een persoon
@@ -158,10 +154,7 @@ public class Persoon{
         this.dienblad = dienblad;
     }
     
-     /**
-    * Methode om een artikel op een dienblad te zetten. 
-    * @param artikel
-    */
+
     public Dienblad getDienblad(){
         return dienblad;
     }

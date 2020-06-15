@@ -79,4 +79,7 @@ public class KantineAanbod {
     public Artikel getArtikel(String productnaam) {
         return getArtikel(getArrayList(productnaam));
     }
+    public HashMap<String, Integer> getArtikelArray(){
+        return startVoorraad;
+    }
 }

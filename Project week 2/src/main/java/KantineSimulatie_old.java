@@ -13,7 +13,7 @@ public class KantineSimulatie_old {
     /**
      * Constructor
      */
-    public KantineSimulatie_1() {
+    public KantineSimulatie_old() {
         kantine = new Kantine();
     }
 
@@ -38,7 +38,7 @@ public class KantineSimulatie_old {
             }
 
             // verwerk rij voor de kassa
-            kantine.verwerkRij();
+            kantine.verwerkRijVoorKassa();
 
             // toon dagtotalen (artikelen en geld in kassa)
             System.out.println();
