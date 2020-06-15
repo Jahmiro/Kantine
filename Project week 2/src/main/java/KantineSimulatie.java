@@ -1,20 +1,20 @@
 import java.util.*;
 /**
  *
- * @author Jahmiro Kooijstra, Arjen Dijk en Djordi Olijve
+ * @author Jahmiro Kooijstra, Arjen Dijk en Djordy Olijve
  * @version 1.0
  */
 
 public class KantineSimulatie {
 
     // kantine
-    private Kantine kantine;
-    private Persoon persoon1;
-    private Dienblad dienblad1;
+    private static Kantine kantine;
+    private static Persoon persoon1;
+    private static Dienblad dienblad1;
     // kantineaanbod
-    private KantineAanbod kantineaanbod;
+    private static KantineAanbod kantineaanbod;
     // random generator
-    private Random random;
+    private static Random random;
     // aantal artikelen
     private static final int AANTAL_ARTIKELEN = 4;
     // artikelen
@@ -56,7 +56,7 @@ public class KantineSimulatie {
      * verloop van de kantine
      * @param dagen (aantal dagen om te simuleren)
      */
-    public void simuleer(int dagen) {
+    public static void simuleer(int dagen) {
         ArrayList<Double> dagomzet = new ArrayList<>();
         ArrayList<Integer> artikelenVerkocht = new ArrayList<>();
 
@@ -164,7 +164,7 @@ public class KantineSimulatie {
      * @param max
      * @return De array met random getallen
      */
-    private int[] getRandomArray(int lengte, int min, int max) {
+    private static int[] getRandomArray(int lengte, int min, int max) {
         int[] temp=new int[lengte];
         for(int i=0;i<lengte;i++) {
             temp[i]=getRandomValue(min, max);
@@ -179,7 +179,7 @@ public class KantineSimulatie {
      * @param max
      * @return Een random getal
      */
-    private int getRandomValue(int min, int max) {
+    private static int getRandomValue(int min, int max) {
         return random.nextInt(max-min+1)+min;
     }
 
@@ -189,7 +189,7 @@ public class KantineSimulatie {
      * @param indexen
      * @return De array met artikelnamen
      */
-    private String[] geefArtikelNamen(int[] indexen) {
+    private static String[] geefArtikelNamen(int[] indexen) {
         String[] artikelen=new String[indexen.length];
         for(int i=0;i<indexen.length;i++) {
             artikelen[i]=artikelnamen[indexen[i]];
@@ -201,7 +201,7 @@ public class KantineSimulatie {
      * Methode om te kijken naar alle artikelen en controleren of de hoeveelheid lager is dan het minimum
      * Zo ja, dan wordt het random bijgevuld tussen het minimum en het maximum
      */
-    private void checkArtikelHoeveelheidEnVulAan(int min, int max){
+    private static void checkArtikelHoeveelheidEnVulAan(int min, int max){
 
         for (HashMap.Entry<String, Integer> entry : kantineaanbod.getArtikelArray().entrySet())
         {
@@ -218,7 +218,7 @@ public class KantineSimulatie {
      * @param artikelen De array met artikelnamen die de persoon gekozen heeft (zie de methode: simuleer)
      * @param aantalartikelen Het getal dat van de artikelhoeveelheid moet worden afgetrokken
      */
-    private void artikelHoeveelheidAftrekken(String[] artikelen, int aantalartikelen){
+    private static void artikelHoeveelheidAftrekken(String[] artikelen, int aantalartikelen){
         for (String artikelnaam : artikelen) {
             for (HashMap.Entry<String, Integer> entry : kantineaanbod.getArtikelArray().entrySet())
             {
@@ -233,5 +233,8 @@ public class KantineSimulatie {
         }
     }
 
+    public static void main(String[] args) {
+        simuleer(10);
+    }
 }
 
