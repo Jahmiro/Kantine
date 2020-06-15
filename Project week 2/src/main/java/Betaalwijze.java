@@ -10,7 +10,7 @@ public abstract class Betaalwijze {
 
     /**
      * Methode om krediet te initialiseren
-     * @param krediet
+     * @param saldo
      */
     public void setSaldo(double saldo){
         this.saldo=saldo;
