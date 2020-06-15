@@ -44,11 +44,7 @@ public class Persoon{
     * Als het persoon geen dienblad heeft maakt dan een nieuwe aan.
     * @param dienblad
     */
-    public void pakDienblad(Dienblad dienblad)
-    {
-        this.dienblad = dienblad;
-    }
-    
+   
     /**
      *
      * @return Geeft de voornaam van een persoon terug
@@ -157,9 +153,11 @@ public class Persoon{
         this.geslacht = geslacht;
     }
 
-    public void pakDienblad(Dienblad dienbladKlant) {
+    public void pakDienblad(Dienblad dienblad)
+    {
+        this.dienblad = dienblad;
     }
-
+    
      /**
     * Methode om een artikel op een dienblad te zetten. 
     * @param artikel
