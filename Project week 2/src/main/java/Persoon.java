@@ -39,7 +39,16 @@ public class Persoon{
     public int getBsn() {
         return bsn;
     }
-
+ /**
+    * Methode om dienblad te koppelen aan een persoon
+    * Als het persoon geen dienblad heeft maakt dan een nieuwe aan.
+    * @param dienblad
+    */
+    public void pakDienblad(Dienblad dienblad)
+    {
+        this.dienblad = dienblad;
+    }
+    
     /**
      *
      * @return Geeft de voornaam van een persoon terug
