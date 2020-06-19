@@ -11,6 +11,7 @@ public class Artikel {
      */
     private String naam;
     private double prijs;
+    private double korting;
 
     /**
      * constructor met parameters
@@ -21,6 +22,19 @@ public class Artikel {
     {
         setNaam(naam);
         setPrijs(prijs);
+        korting = 0;
+    }
+
+    /**
+     * constructor
+     * @param naam
+     * @param prijs
+     * @param korting
+     */
+    public Artikel(String naam, double prijs, double korting) {
+        this.naam = naam;
+        this.prijs = prijs;
+        this.korting = korting;
     }
 
     /**
@@ -63,6 +77,14 @@ public class Artikel {
      */
     public void setPrijs(double nieuwePrijs) {
         this.prijs = nieuwePrijs;
+    }
+
+    public double getKorting() {
+        return korting;
+    }
+
+    public void setKorting(double korting) {
+        this.korting = korting;
     }
 
     /**
