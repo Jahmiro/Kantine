@@ -26,6 +26,16 @@ public class Artikel {
     }
 
     /**
+     * contructor zonder parameters
+     *
+     */
+    public Artikel()
+    {
+        setNaam("Onbekend");
+        setPrijs(0.00);
+    }
+
+    /**
      * constructor
      * @param naam
      * @param prijs
@@ -35,16 +45,6 @@ public class Artikel {
         this.naam = naam;
         this.prijs = prijs;
         this.korting = korting;
-    }
-
-    /**
-     * contructor zonder parameters
-     *
-     */
-    public Artikel()
-    {
-        setNaam("Onbekend");
-        setPrijs(0.00);
     }
 
     /**
@@ -79,10 +79,18 @@ public class Artikel {
         this.prijs = nieuwePrijs;
     }
 
+    /**
+     * getter
+     * @return korting
+     */
     public double getKorting() {
         return korting;
     }
 
+    /**
+     * setter
+     * @param korting
+     */
     public void setKorting(double korting) {
         this.korting = korting;
     }
