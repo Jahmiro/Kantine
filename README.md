@@ -20,4 +20,14 @@ Vraag: Waarom moet een super aanroep in de constructor altijd bovenaan staan?
 Antwoord: De super aanroep moet altijd bovenaan staan, omdat het anders in BlueJ niet kan compileren. De subklasse moet altijd eerst de gegevens van de superklasse weten voordat de subklasse daar gegevens aan toe kan voegen.
 
 --------------------------------------------------------------------------------------
+Week 5
+--------------------------------------------------------------------------------------
+Opdracht 3
+
+Vraag: De meeste databases kennen het concept van een transactie waar meerder queries worden gegroe- peerd en als één operatie worden uitgevoerd. Mocht ergens een fout optreden dan kunnen alle queries weer ongedaan worden gemaakt.
+Zoek in de klasse Main een voorbeeld van het gebruik van een transactie. Je zal zien dat gebruik wordt gemaakt van een try-catch blok om een transactie bij een fout af te breken en terug te draaien (roll- back).
+
+Antwoord: Als een klant artikelen probeert af te rekenen en er geen saldo is, dan wordt er een roll-back uitgevoerd.
+
+--------------------------------------------------------------------------------------
 
