@@ -9,7 +9,7 @@
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 
             <!-- PostgreSQL JDBC driver example -->
-            <!--
+            <!---->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
             -->
 
@@ -39,11 +39,11 @@
 
             <!-- The database username -->
             <!-- VERVANG DEZE WAARDEN MET DE GELDENDE WAARDEN OP JE EIGEN SYSTEEM -->
-            <property name="javax.persistence.jdbc.user" value="docent" />
+            <property name="javax.persistence.jdbc.user" value="root" />
 
             <!-- The database password -->
             <!-- VERVANG DEZE WAARDEN MET DE GELDENDE WAARDEN OP JE EIGEN SYSTEEM -->
-            <property name="javax.persistence.jdbc.password" value="hoppekee" />
+            <property name="javax.persistence.jdbc.password" value="" />
 
             <property name="hibernate.connection.charSet" value="UTF-8" />
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
