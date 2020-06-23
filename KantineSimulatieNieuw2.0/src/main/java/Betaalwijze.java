@@ -5,7 +5,6 @@
  */
 
 public abstract class Betaalwijze {
-
     protected double saldo;
 
     /**
@@ -13,13 +12,14 @@ public abstract class Betaalwijze {
      * @param saldo
      */
     public void setSaldo(double saldo){
-        this.saldo=saldo;
+        this.saldo = saldo;
     }
 
     /**
      * Methode om betaling af te handelen
      * @param tebetalen
      * @return Boolean om te kijken of er voldoende saldo is
+     * @throws TeWeinigGeldException Als er te weinig geld is om te betalen.
      */
     public abstract void betaal(double tebetalen) throws TeWeinigGeldException;
 }

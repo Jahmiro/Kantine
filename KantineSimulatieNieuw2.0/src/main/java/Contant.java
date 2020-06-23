@@ -6,14 +6,14 @@
 
 public class Contant extends Betaalwijze {
     /**
-     * Methode om betaling af te handelen.
-     * @return
+     * Methode om te betalen
+     * @throws TeWeinigGeldException Als er te weinig geld is om te betalen.
      */
     public void betaal(double tebetalen) throws TeWeinigGeldException {
         if(saldo >= tebetalen) {
-            saldo = saldo-tebetalen;
-        } else {
-            throw new TeWeinigGeldException("Geen geld");
+            saldo -= tebetalen;
+            return;
         }
+        throw new TeWeinigGeldException("heeft niet genoeg geld om te betalen.");
     }
 }
