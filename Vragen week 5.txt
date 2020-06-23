@@ -1,0 +1,43 @@
+Week 5
+
+1d: LeesdeklassenStudent,StudieInschrijvingenTelefoondoor.Zoujealietskunnenver- tellen over het doel van de annotaties @Id, @GeneratedValue en @Column?
+
+@id is voor een primary key
+@GeneratedValua auto increment, zorgt ervoor dat de id automatisch een nummer krijgt.
+@Column staan alle details in voor het colum.
+
+
+1e Een viertal tabellen zullen nu in de database zijn aangemaakt, welke zijn deze?
+- student, student_telefoon, studie en telefoon.
+
+2a. Waarom een @OneToMany en niet @OneToOne zijn gebruikt?
+- Bij een OneToOne kan een student maar een telefoonnummer hebben, maar een student kan over meerdere telefoons beschikken (Bijvoorbeeld Mobiel/Huistelefoon)
+
+b. Het attribuut studies in de klasse Student is ook geannoteerd met @OneToMany, dit omdat een student natuurlijk bij meerdere studies ingeschreven kan staan. In tegenstelling tot telefoons wordt hier geen @JoinTable annotatie gebruikt.
+• Hoe wordt het verschil zichtbaar in de database? Let hier op de tabellen die zijn aangemaakt en de velden in de tabellen voor een Student en StudieInschrijving.
+
+In de tabel Studie is het student_id beschikbaar. Bij de telefoon wordt er gebruikt gemaakt van een koppeltabel, hierin staat het id van de telefoon en van de student.
+
+
+• Zou je een nadeel kunnen bedenken waarom voor de relatieStudentenStudieInschrijving via studies geen @JoinTable is gebruikt?
+
+De relatie tussen de student en de inschrijving is dan weg, het is dan moeilijk om te traceren welke student bij welke inschrijving hoort. Dit kan ertoe lijden dat een student bij een verkeerde studie terecht komt.
+
+c. In de klasse StudieInschrijving is het attribuut student met @ManyToOne geannoteerd.
+Beschrijf hoe deze relatie in de database zichtbaar wordt.
+Je kan zien dat een student zich voor meerdere studies kan hebben ingeschreven
+
+d. De klasse StudentKaart is geannoteerd met @Embeddable en het attribuut kaart in de klasse
+Student met @Embedded.
+• Waar vind je een StudentKaart terug in de database?
+Kaartnummer en vervalDatum staat in de tabel student
+
+• Wat zou je hieruit kunnen afleiden met betrekking tot het gebruik en de functie van @Embeddable en @Embedded?
+Dat je met gebruik hiervan andere classen kan toevoegen aan een tabel in je databse
+
+3a
+
+De meeste databases kennen het concept van een transactie waar meerder queries worden gegroe- peerd en als één operatie worden uitgevoerd. Mocht ergens een fout optreden dan kunnen alle queries weer ongedaan worden gemaakt.
+Zoek in de klasse Main een voorbeeld van het gebruik van een transactie. Je zal zien dat gebruik wordt gemaakt van een try-catch blok om een transactie bij een fout af te breken en terug te draaien (roll- back).
+
+Als een klant artikelen probeert af te rekenen en er geen saldo is, dan wordt er een roll-back uitgevoerd.
